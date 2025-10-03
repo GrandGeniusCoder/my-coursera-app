@@ -1,19 +1,129 @@
-.App {
+/* General reset */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fefdf9;
+  margin: 0;
+  padding: 0;
+  color: #fefdf9;
+}
+
+/* Container */
+.booking-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #657463;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: grid;
+  gap: 1rem;
+}
+
+/* Labels and inputs */
+.booking-form label {
   display: flex;
-  padding: 16px;
+  
   flex-direction: column;
-  min-height: 100vh;
+  font-weight: 600;
+  color: #ece7da;
 }
 
-header {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+/* Input styling */
+.booking-form input,
+.booking-form select {
+  padding: 0.7rem;
+  background-color: #fefdf9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+  width: 100%;
 }
 
-.Page {
-  max-width: 1280px;
-  margin: 0 auto;
+.booking-form input:focus,
+.booking-form select:focus {
+  outline: none;
+  border-color: #495e57;
+  box-shadow: 0 0 4px rgba(73, 94, 87, 0.3);
+}
+
+/* Button */
+.booking-form button {
+  padding: 0.9rem;
+  background: #f4d35e;
+  color: #495e57;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.booking-form button:hover {
+  background: #e9c46a;
+}
+
+/* --- RESPONSIVENESS --- */
+@media (min-width: 768px) {
+  .booking-form {
+    grid-template-columns: 1fr 1fr; /* 2-column layout */
+    gap: 1.2rem;
+  }
+
+  /* Make button and heading full width */
+  .booking-form h2,
+  .booking-form button {
+    grid-column: span 2;
+  }
+}
+
+.booking-list {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+/* Each booking as a card */
+.booking-item {
+  background: #fff;
+  color: #495e57;
+  border: 1px solid #eee;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.booking-item:hover {
+  transform: translateY(-3px);
+}
+
+/* Booking content */
+.booking-item h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #495e57;
+}
+
+.booking-item p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* --- RESPONSIVE LAYOUT --- */
+@media (min-width: 600px) {
+  .booking-list {
+    grid-template-columns: 1fr 1fr; /* 2 cards side by side */
+  }
+}
+
+@media (min-width: 900px) {
+  .booking-list {
+    grid-template-columns: 1fr 1fr 1fr; /* 3 cards on big screens */
+  }
 }
